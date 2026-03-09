@@ -4,7 +4,11 @@ import csv
 import time
 import pandas as pd
 from typing import List, Dict, Any, Union
-from tqdm import tqdm
+try:
+    from tqdm import tqdm
+except Exception:
+    # Fallback simple si tqdm no está instalado
+    tqdm = lambda x, **kwargs: x
 
 import sys
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
