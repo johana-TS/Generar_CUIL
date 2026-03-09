@@ -1,0 +1,33 @@
+# Entorno virtual
+.venv/
+env/
+venv/
+ENV/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Distribución
+dist/
+build/
+*.egg-info/
+
+# Datos y logs
+data/output/*
+!data/output/.gitkeep
+logs/
+*.log
+
+# IDE
+.vscode/
+.idea/
+*.swp
+.DS_Store
+
+# Environment
+.env
+.env.local
