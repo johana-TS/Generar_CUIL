@@ -84,7 +84,7 @@ def main():
             logger.error(f"Formato de archivo no soportado: {ext}")
             sys.exit(1)
             
-        columnas = [c.lower() for c in df.columns]
+        columnas = [str(c).lower() for c in df.columns]
         df.columns = columnas
         
         if 'dni' not in columnas or 'sexo' not in columnas:

@@ -150,7 +150,7 @@ class ProcesadorLotes:
             
         # Convertir dataframe a lista de diccionarios
         # Aseguramos que 'dni' y 'sexo' existen
-        columnas = [c.lower() for c in df.columns]
+        columnas = [str(c).lower() for c in df.columns]
         df.columns = columnas
         
         if 'dni' not in columnas or 'sexo' not in columnas:
