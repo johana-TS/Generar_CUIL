@@ -4,7 +4,7 @@
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 
 ## Descripción
-Proyecto en Python para procesar, calcular, validar y normalizar datos (e.g. CUIL) con una arquitectura modular. Preparado para futura integración y exposición mediante API.
+Proyecto en Python para procesar, calcular, validar y normalizar datos (DNI-CUIL) con una arquitectura modular.
 
 ## Estructura
 - `src/`: Lógica de negocio core (cálculo, procesamiento, utilidades).
@@ -39,9 +39,4 @@ Ejecutar la aplicación principal:
 python main.py
 ```
 
-## Contribuciones
-1. Haz un fork del repositorio.
-2. Crea una rama para tu feature (`git checkout -b feature/nueva-funcionalidad`).
-3. Realiza tus cambios y haz commits (`git commit -m 'Agregar nueva funcionalidad'`).
-4. Haz push a la rama (`git push origin feature/nueva-funcionalidad`).
-5. Abre un Pull Request.
+
