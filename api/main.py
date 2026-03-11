@@ -4,19 +4,35 @@ import uuid
 import shutil
 from typing import Dict, Any
 from fastapi import FastAPI, BackgroundTasks, UploadFile, File, HTTPException
+from fastapi.middleware.cors import CORSMiddleware
+
 
 # Agregar src al path
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'src')))
 
 from calculador.core import CalculadorCUIL
 from procesador.archivos import ProcesadorLotes
-from api.schemas import PersonaInput, RespuestaAPI, CUILOutput
+try:
+    from api.schemas import PersonaInput, RespuestaAPI, CUILOutput
+except ImportError:
+    from .schemas import PersonaInput, RespuestaAPI, CUILOutput
+
 
 app = FastAPI(
     title="API Sistema CUIL",
     description="API para el cálculo individual y procesamiento por lotes de números CUIL.",
     version="1.0.0"
 )
+
+# Configuración de CORS
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # En producción, reemplazar por los dominios permitidos
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
 
 # Instancias compartidas
 calculador_global = CalculadorCUIL()
